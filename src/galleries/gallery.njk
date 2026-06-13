@@ -1,0 +1,30 @@
+---
+layout: base.njk
+title: LTClark Photography
+navbarClass: navbar-dark
+activeNav: galleries
+permalink: /galleries/gallery.html
+---
+
+<div class="heading-img position-relative section bg-dark text-center">
+    <img class="d-block w-100" src="/assets/images/acadia/IMG_2672.jpg" alt="Header Image" loading="eager" decoding="async">
+    <div class="position-absolute top-50 start-50 translate-middle text-light">
+        <h1 class="display-5 fw-bold">Galleries</h1>
+    </div>
+</div>
+
+<div class="container-fluid section bg-light">
+    <div class="gallery">
+        {% for slug in galleries.order %}
+        {% set g = galleries.byName[slug] %}
+        <div class="gallery-picture img-fade">
+            <img class="img-fluid w-100" src="{{ g.thumbnail }}" loading="lazy" decoding="async" alt="{{ g.thumbnailTitle }}">
+            <div class="gallery-caption d-none d-md-block">
+                <a class="btn btn-outline-light btn-lg text-fade" role="button" href="/galleries/{{ slug }}.html">
+                    <h1>{{ g.thumbnailTitle }}</h1>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

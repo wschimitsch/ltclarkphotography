@@ -1,0 +1,93 @@
+---
+layout: base.njk
+title: LTClark Photography
+navbarClass: navbar-dark
+activeNav: contact
+emailJS: true
+permalink: /contact.html
+---
+
+<div class="heading-img position-relative section bg-dark text-center">
+    <img class="d-block w-100" src="/assets/images/hc_track2024/IMG_7105.JPG" alt="Header Image" loading="eager" decoding="async">
+    <div class="position-absolute top-50 start-50 translate-middle text-light">
+        <h1 class="display-5 fw-bold">Contact Me</h1>
+    </div>
+</div>
+
+<div class="container-fluid mt-5 section bg-light">
+    <div class="row content justify-content-center">
+        <div class="col-4">
+            <h1>Let's Connect</h1>
+            <p>Reach out and we'll find a way that we can work together and create something special. Fill out the form below with some details, and I'll get back to you within 48 hours!</p>
+        </div>
+    </div>
+
+    <div class="row mt-4 ms-4">
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm p-3">
+                <img src="/assets/images/portrait.JPG" class="img-fluid rounded mb-4" alt="Contact" loading="lazy" decoding="async">
+                <h5 class="mb-1">Contact Information</h5>
+                <p class="mb-1">laurentclarkphotography@gmail.com</p>
+                <p class="mb-1">Morris County, NJ</p>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <form id="contact-form">
+                <input type="hidden" name="time" value="">
+
+                <div class="mb-3 form-group">
+                    <input type="text" class="form-control" name="name" placeholder="Full Name" required>
+                </div>
+
+                <div class="mb-3 form-group">
+                    <input type="email" class="form-control" name="email" placeholder="Email" required>
+                </div>
+
+                <div class="mb-3 form-group">
+                    <input type="text" class="form-control" name="phone" placeholder="Phone Number">
+                </div>
+
+                <div class="mb-3 form-group">
+                    <select class="form-select" name="interest" required>
+                        <option value="" disabled selected hidden>Photography Interests</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Portraits">Portraits</option>
+                        <option value="Events">Events</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="mb-3 form-group">
+                    <input type="date" class="form-control" name="date" required>
+                </div>
+
+                <div class="mb-3 form-group">
+                    <input type="text" class="form-control" name="location" placeholder="Location" required>
+                </div>
+
+                <div class="mb-3 form-group">
+                    <select class="form-select" name="referral" required>
+                        <option value="" disabled selected hidden>How did you hear about me?</option>
+                        <option value="Google">Google</option>
+                        <option value="Instagram">Instagram</option>
+                        <option value="TikTok">TikTok</option>
+                        <option value="LinkedIn">LinkedIn</option>
+                        <option value="Friend">Friend</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="mb-3 form-group">
+                    <textarea class="form-control" name="message" placeholder="Additional Information" rows="4" required></textarea>
+                </div>
+
+                <div class="mb-3 justify-content-center">
+                    <button type="submit" class="btn btn-secondary w-100">Submit</button>
+                </div>
+            </form>
+
+            <div id="alertPlaceholder" class="position-fixed bottom-0 start-50 translate-middle-x mt-3 px-2" style="z-index:1100; width: 100%; max-width: 30vw;"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+---
+layout: base.njk
+---
+{% set gallery = galleries.byName[galleryName] %}
+
+<div class="heading-img section {{ gallery.headerBg }}">
+    <img class="d-block w-100" src="{{ gallery.headerImage }}" loading="eager" decoding="async" alt="{{ gallery.title }}">
+</div>
+
+<div class="section bg-light mx-2 my-4">
+    <h1 class="display-5 fw-bold">{{ gallery.title }}</h1>
+</div>
+
+<div class="gallery img-fade section {{ gallery.bg }} mx-2 mt-0">
+    {% for img in gallery.images %}
+    <img src="{{ img }}" loading="lazy" decoding="async" alt="{{ gallery.title }}">
+    {% endfor %}
+</div>

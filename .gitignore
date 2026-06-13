@@ -1,0 +1,33 @@
+# Eleventy build output
+_site/
+
+# Dependencies
+node_modules/
+
+# Eleventy cache
+.cache/
+.eleventy-cache/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# Misc
+*.save
