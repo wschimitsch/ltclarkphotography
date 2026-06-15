@@ -1,3 +1,5 @@
+import "dotenv/config";
+
 export default function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets");
 

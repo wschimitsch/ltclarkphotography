@@ -1,6 +1,9 @@
 # Eleventy build output
 _site/
 
+# Images live in Cloudflare R2, not the repo
+assets/images/
+
 # Dependencies
 node_modules/
 
