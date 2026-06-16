@@ -5,9 +5,14 @@
    
 } */
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     font-family: "Cormorant Garamond", sebrif;
     background-color: white !important;
+    overflow-x: hidden;
 }
 
 input[type="date"]:invalid {
@@ -121,15 +126,6 @@ option {
     display: block;
 }
 
-.portrait {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 50%;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
-
 .carousel-caption {
     top: 60%;
     transform: translateY(-60%);
@@ -153,19 +149,18 @@ option {
 }
 
 .portrait {
-    position: absolute;
-    bottom: -50%;           /* overlaps 50px below the heading */
-    left: 50%;               /* horizontally center */
-    transform: translateX(-50%);
+    display: block;
     max-width: 50%;
+    margin: -8rem auto 2rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-@media (max-width: 768px) {
+/* lg (992px) → 2 columns; below md (768px) → 1 column */
+@media (max-width: 991px) {
     .gallery { column-count: 2; }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
     .gallery { column-count: 1; }
 }
 
@@ -173,4 +168,40 @@ option {
     min-height: 100vh;
     display: flex;
     align-items: center;
+}
+
+/* Responsive carousel caption text sizing */
+.carousel-heading {
+    font-size: clamp(1.1rem, 4vw, 2rem);
+}
+
+.carousel-subhead {
+    font-size: clamp(0.85rem, 2.5vw, 1.25rem);
+    margin-bottom: 0.25rem;
+}
+
+/* Mobile overrides */
+@media (max-width: 767px) {
+    /* Remove fixed row height so stacked columns don't leave huge gaps */
+    .home .container-fluid .row {
+        min-height: unset;
+    }
+
+    /* Larger portrait and less overlap on small screens */
+    .portrait {
+        max-width: 80%;
+        margin-top: -3rem;
+    }
+
+    /* Scale down large display headings */
+    h1.display-5,
+    .display-5 {
+        font-size: 1.75rem;
+    }
+}
+
+/* Alert / toast notification container — responsive width instead of fixed 30vw */
+.alert-toast-container {
+    z-index: 1100;
+    width: min(90vw, 400px);
 }

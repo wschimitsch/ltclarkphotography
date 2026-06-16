@@ -19,7 +19,7 @@ permalink: /galleries/gallery.html
         {% set g = galleries.byName[slug] %}
         <div class="gallery-picture img-fade">
             <img class="img-fluid w-100" src="{{ g.thumbnail }}" loading="lazy" decoding="async" alt="{{ g.thumbnailTitle }}">
-            <div class="gallery-caption d-none d-md-block">
+            <div class="gallery-caption">
                 <a class="btn btn-outline-light btn-lg text-fade" role="button" href="/galleries/{{ slug }}.html">
                     <h1>{{ g.thumbnailTitle }}</h1>
                 </a>
