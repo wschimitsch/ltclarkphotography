@@ -119,8 +119,9 @@ option {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     text-align: center;
-    color: white;
 }
 
 .gallery-caption h1 {
