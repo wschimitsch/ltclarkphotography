@@ -12,6 +12,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="/assets/styles.css">
+    {% if heroImagePath %}
+      {% set _heroUrl = env.cdnBase + heroImagePath %}
+    {% elif galleryName %}
+      {% set _heroUrl = galleries.byName[galleryName].headerImage %}
+    {% endif %}
+    {% if _heroUrl %}
+    <link rel="preload" as="image"
+          href="{{ _heroUrl | cdnSrc }}"
+          imagesrcset="{{ _heroUrl | cdnSrcset }}"
+          imagesizes="100vw">
+    {% endif %}
     {% if emailJS %}
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="/assets/email.js"></script>

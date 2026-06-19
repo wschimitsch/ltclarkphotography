@@ -4,7 +4,11 @@ layout: base.njk
 {% set gallery = galleries.byName[galleryName] %}
 
 <div class="heading-img section {{ gallery.headerBg }}">
-    <img class="d-block w-100" src="{{ gallery.headerImage }}" loading="eager" decoding="async" alt="{{ gallery.title }}">
+    <img class="d-block w-100"
+         src="{{ gallery.headerImage | cdnSrc }}"
+         srcset="{{ gallery.headerImage | cdnSrcset }}"
+         sizes="100vw"
+         loading="eager" decoding="async" alt="{{ gallery.title }}">
 </div>
 
 <div class="section bg-light mx-2 my-4">
@@ -13,6 +17,9 @@ layout: base.njk
 
 <div class="gallery img-fade section {{ gallery.bg }} mx-2 mt-0">
     {% for img in gallery.images %}
-    <img src="{{ img }}" loading="lazy" decoding="async" alt="{{ gallery.title }}">
+    <img src="{{ img | cdnSrc }}"
+         srcset="{{ img | cdnSrcset }}"
+         sizes="(max-width: 767px) 100vw, (max-width: 991px) 50vw, 33vw"
+         loading="lazy" decoding="async" alt="{{ gallery.title }}">
     {% endfor %}
 </div>

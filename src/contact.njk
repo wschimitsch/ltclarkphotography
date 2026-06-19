@@ -5,10 +5,12 @@ navbarClass: navbar-dark
 activeNav: contact
 emailJS: true
 permalink: /contact.html
+heroImagePath: /images/hc_track2024/IMG_7105.JPG
 ---
 
 <div class="heading-img position-relative section bg-dark text-center">
-    <img class="d-block w-100" src="{{ env.cdnBase }}/images/hc_track2024/IMG_7105.JPG" alt="Header Image" loading="eager" decoding="async">
+    {% set _img = env.cdnBase + "/images/hc_track2024/IMG_7105.JPG" %}
+    <img class="d-block w-100" src="{{ _img | cdnSrc }}" srcset="{{ _img | cdnSrcset }}" sizes="100vw" alt="Header Image" loading="eager" decoding="async">
     <div class="position-absolute top-50 start-50 translate-middle text-light">
         <h1 class="display-5 fw-bold">Contact Me</h1>
     </div>
@@ -25,7 +27,8 @@ permalink: /contact.html
     <div class="row mt-4 px-3">
         <div class="col-md-4 mb-4">
             <div class="card shadow-sm p-3">
-                <img src="{{ env.cdnBase }}/images/portrait.JPG" class="img-fluid rounded mb-4" alt="Contact" loading="lazy" decoding="async">
+                {% set _img = env.cdnBase + "/images/portrait.JPG" %}
+                <img src="{{ _img | cdnSrc }}" srcset="{{ _img | cdnSrcset }}" sizes="(max-width: 767px) 100vw, 25vw" class="img-fluid rounded mb-4" alt="Contact" loading="lazy" decoding="async">
                 <h5 class="mb-1">Contact Information</h5>
                 <p class="mb-1">laurentclarkphotography@gmail.com</p>
                 <p class="mb-1">Morris County, NJ</p>

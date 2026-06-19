@@ -7,6 +7,6 @@ const observer = new IntersectionObserver((entries) => {
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.1, rootMargin: '200px' });
 
 images.forEach(img => observer.observe(img));

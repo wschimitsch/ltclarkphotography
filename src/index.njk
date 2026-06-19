@@ -5,6 +5,7 @@ navbarClass: navbar-dark
 activeNav: home
 bodyClass: home
 permalink: /index.html
+heroImagePath: /images/australia/IMG_0370.jpg
 ---
 
 <div id="carouselExampleIndicators" class="carousel slide carousel-fade section bg-dark" data-bs-ride="carousel" data-bs-interval="5000">
@@ -15,7 +16,8 @@ permalink: /index.html
     </div>
     <div class="carousel-inner">
         <div class="carousel-item heading-img active">
-            <img class="d-block w-100" src="{{ env.cdnBase }}/images/australia/IMG_0370.jpg" alt="First slide" loading="eager" decoding="async">
+            {% set _img = env.cdnBase + "/images/australia/IMG_0370.jpg" %}
+            <img class="d-block w-100" src="{{ _img | cdnSrc }}" srcset="{{ _img | cdnSrcset }}" sizes="100vw" alt="First slide" loading="eager" decoding="async">
             <div class="carousel-caption text-center">
                 <h1 class="fw-bold carousel-heading">Photography by Lauren Clark</h1>
                 <p class="carousel-subhead">Capture Your Story</p>
@@ -25,7 +27,8 @@ permalink: /index.html
             </div>
         </div>
         <div class="carousel-item heading-img">
-            <img class="d-block w-100" src="{{ env.cdnBase }}/images/kenya/IMG_0555.jpg" alt="Second slide" loading="lazy" decoding="async">
+            {% set _img = env.cdnBase + "/images/kenya/IMG_0555.jpg" %}
+            <img class="d-block w-100" src="{{ _img | cdnSrc }}" srcset="{{ _img | cdnSrcset }}" sizes="100vw" alt="Second slide" loading="eager" decoding="async">
             <div class="carousel-caption">
                 <h1 class="fw-bold carousel-heading">Galleries</h1>
                 <p class="carousel-subhead">People, Nature, Cities, Sports, and More</p>
@@ -35,7 +38,8 @@ permalink: /index.html
             </div>
         </div>
         <div class="carousel-item heading-img">
-            <img class="d-block w-100" src="{{ env.cdnBase }}/images/hc_track2024/IMG_2045.jpg" alt="Third slide" loading="lazy" decoding="async">
+            {% set _img = env.cdnBase + "/images/hc_track2024/IMG_2045.jpg" %}
+            <img class="d-block w-100" src="{{ _img | cdnSrc }}" srcset="{{ _img | cdnSrcset }}" sizes="100vw" alt="Third slide" loading="eager" decoding="async">
             <div class="carousel-caption">
                 <h1 class="fw-bold carousel-heading">Collaboration</h1>
                 <p class="carousel-subhead">See How We Can Work Together</p>
@@ -50,7 +54,8 @@ permalink: /index.html
 <div class="container-fluid content section mt-4">
     <div class="row d-flex align-items-center">
         <div class="col-12 col-md px-4 img-fade">
-            <img src="{{ env.cdnBase }}/images/darkroom/img20250428_21352201.jpg" class="img-fluid img-left" loading="lazy" decoding="async" alt="">
+            {% set _img = env.cdnBase + "/images/darkroom/img20250428_21352201.jpg" %}
+            <img src="{{ _img | cdnSrc }}" srcset="{{ _img | cdnSrcset }}" sizes="(max-width: 768px) 100vw, 33vw" class="img-fluid img-left" loading="lazy" decoding="async" alt="">
         </div>
         <div id="introduction" class="col-12 col-md p-4 text-fade">
             <h1>Storytelling Focus</h1>
@@ -59,13 +64,15 @@ permalink: /index.html
             </p>
         </div>
         <div class="d-none d-md-block col-md px-4 img-fade">
-            <img src="{{ env.cdnBase }}/images/project/IMG_7059.JPG" class="img-fluid img-right" loading="lazy" decoding="async" alt="">
+            {% set _img = env.cdnBase + "/images/project/IMG_7059.JPG" %}
+            <img src="{{ _img | cdnSrc }}" srcset="{{ _img | cdnSrcset }}" sizes="33vw" class="img-fluid img-right" loading="lazy" decoding="async" alt="">
         </div>
     </div>
 
     <div class="row gx-6 py-6 mt-6">
         <div class="col-12 col-md px-4 img-fade">
-            <img src="{{ env.cdnBase }}/images/kenya/IMG_0691.jpg" class="img-fluid img-left" loading="lazy" decoding="async" alt="">
+            {% set _img = env.cdnBase + "/images/kenya/IMG_0691.jpg" %}
+            <img src="{{ _img | cdnSrc }}" srcset="{{ _img | cdnSrcset }}" sizes="(max-width: 768px) 100vw, 33vw" class="img-fluid img-left" loading="lazy" decoding="async" alt="">
         </div>
         <div class="col-12 col-md p-4 text-fade">
             <h1>Sports & Action Oriented</h1>
@@ -74,13 +81,15 @@ permalink: /index.html
             </p>
         </div>
         <div class="d-none d-md-block col-md px-4 img-fade">
-            <img src="{{ env.cdnBase }}/images/hc_track2024/IMG_7051.JPG" class="img-fluid img-right" loading="lazy" decoding="async" alt="">
+            {% set _img = env.cdnBase + "/images/hc_track2024/IMG_7051.JPG" %}
+            <img src="{{ _img | cdnSrc }}" srcset="{{ _img | cdnSrcset }}" sizes="33vw" class="img-fluid img-right" loading="lazy" decoding="async" alt="">
         </div>
     </div>
 
     <div class="row gx-6 py-6 mt-6">
         <div class="col-12 col-md px-4 img-fade">
-            <img src="{{ env.cdnBase }}/images/acadia/IMG_2404.jpg" class="img-fluid img-left" loading="lazy" decoding="async" alt="">
+            {% set _img = env.cdnBase + "/images/acadia/IMG_2404.jpg" %}
+            <img src="{{ _img | cdnSrc }}" srcset="{{ _img | cdnSrcset }}" sizes="(max-width: 768px) 100vw, 33vw" class="img-fluid img-left" loading="lazy" decoding="async" alt="">
         </div>
         <div class="col-12 col-md p-4 text-fade">
             <h1>Personal & Welcoming</h1>
@@ -89,13 +98,15 @@ permalink: /index.html
             </p>
         </div>
         <div class="d-none d-md-block col-md px-4 img-fade">
-            <img src="{{ env.cdnBase }}/images/acadia/IMG_2485.jpg" class="img-fluid img-right" loading="lazy" decoding="async" alt="">
+            {% set _img = env.cdnBase + "/images/acadia/IMG_2485.jpg" %}
+            <img src="{{ _img | cdnSrc }}" srcset="{{ _img | cdnSrcset }}" sizes="33vw" class="img-fluid img-right" loading="lazy" decoding="async" alt="">
         </div>
     </div>
 
     <div class="row gx-6 py-6 mt-6">
         <div class="col-12 col-md px-4 img-fade">
-            <img src="{{ env.cdnBase }}/images/darkroom/img20250423_18271353.jpg" class="img-fluid img-left" loading="lazy" decoding="async" alt="">
+            {% set _img = env.cdnBase + "/images/darkroom/img20250423_18271353.jpg" %}
+            <img src="{{ _img | cdnSrc }}" srcset="{{ _img | cdnSrcset }}" sizes="(max-width: 768px) 100vw, 33vw" class="img-fluid img-left" loading="lazy" decoding="async" alt="">
         </div>
         <div class="col-12 col-md p-4 text-fade">
             <h1>Creative & Artsy</h1>
@@ -104,7 +115,8 @@ permalink: /index.html
             </p>
         </div>
         <div class="d-none d-md-block col-md px-4 img-fade">
-            <img src="{{ env.cdnBase }}/images/kenya/IMG_0587.jpg" class="img-fluid img-right" loading="lazy" decoding="async" alt="">
+            {% set _img = env.cdnBase + "/images/kenya/IMG_0587.jpg" %}
+            <img src="{{ _img | cdnSrc }}" srcset="{{ _img | cdnSrcset }}" sizes="33vw" class="img-fluid img-right" loading="lazy" decoding="async" alt="">
         </div>
     </div>
 </div>

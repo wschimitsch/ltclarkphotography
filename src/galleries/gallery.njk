@@ -4,10 +4,12 @@ title: LTClark Photography
 navbarClass: navbar-dark
 activeNav: galleries
 permalink: /galleries/gallery.html
+heroImagePath: /images/acadia/IMG_2672.jpg
 ---
 
 <div class="heading-img position-relative section bg-dark text-center">
-    <img class="d-block w-100" src="{{ env.cdnBase }}/images/acadia/IMG_2672.jpg" alt="Header Image" loading="eager" decoding="async">
+    {% set _img = env.cdnBase + "/images/acadia/IMG_2672.jpg" %}
+    <img class="d-block w-100" src="{{ _img | cdnSrc }}" srcset="{{ _img | cdnSrcset }}" sizes="100vw" alt="Header Image" loading="eager" decoding="async">
     <div class="position-absolute top-50 start-50 translate-middle text-light">
         <h1 class="display-5 fw-bold">Galleries</h1>
     </div>
@@ -18,7 +20,11 @@ permalink: /galleries/gallery.html
         {% for slug in galleries.order %}
         {% set g = galleries.byName[slug] %}
         <div class="gallery-picture img-fade">
-            <img class="img-fluid w-100" src="{{ g.thumbnail }}" loading="lazy" decoding="async" alt="{{ g.thumbnailTitle }}">
+            <img class="img-fluid w-100"
+                 src="{{ g.thumbnail | cdnSrc }}"
+                 srcset="{{ g.thumbnail | cdnSrcset }}"
+                 sizes="(max-width: 767px) 100vw, 50vw"
+                 loading="lazy" decoding="async" alt="{{ g.thumbnailTitle }}">
             <div class="gallery-caption">
                 <a class="btn btn-outline-light btn-lg text-fade" role="button" href="/galleries/{{ slug }}.html">
                     <h1>{{ g.thumbnailTitle }}</h1>
